@@ -31,3 +31,7 @@ angular.module("ngapp").controller("MainController", function(shared, $state, $s
         });
     };
 });
+
+angular.module("ngapp").controller("listController", function($scope) {
+    $scope.listTitle = "testingtitle";
+});
