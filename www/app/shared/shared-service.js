@@ -8,7 +8,7 @@ angular.module("ngapp").service("shared", function(){ // One of The Ways To Shar
     };
 });
 
-angular.factory('dataService', function() {
+angular.module("ngapp").service("dataService", function(){
     var savedData = {}
     function set(data) {
         savedData = data;
@@ -23,9 +23,6 @@ angular.factory('dataService', function() {
     }
 });
 
-angular.factory('PokemonService', function ($resource) {
-
-    //
-    var data
+angular.module("ngapp").service("PokemonService", function(){
     return $resource('http://pokeapi.co/api/v2/pokemon/:id/?limit=20');
 });

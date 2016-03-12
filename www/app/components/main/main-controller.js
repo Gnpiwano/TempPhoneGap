@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("ngapp").controller("MainController", function(shared, dataService, $state, $scope, $mdSidenav, $mdComponentRegistry){
+angular.module("ngapp").controller("MainController", function(shared, PokemonService ,$state, $scope, $mdSidenav, $mdComponentRegistry){
 
     var ctrl = this;
 
@@ -20,15 +20,15 @@ angular.module("ngapp").controller("MainController", function(shared, dataServic
         });
     }
     
-    $scope.initDetail = function(){
-        console.log("current pokemon: "+$scope.currentPokemon)
-    }
+    // $scope.initDetail = function(){
+    //     console.log("current pokemon: "+$scope.currentPokemon)
+    // }
 
-    $scope.showDetails = function(url){
-        //dataService.set(url);
-        console.log('setted: ' + JSON.stringify(url));
-        window.location.href = "#showPokemon";
-    }
+    // $scope.showDetails = function(url){
+    //     //dataService.set(url);
+    //     console.log('setted: ' + JSON.stringify(url));
+    //     window.location.href = "#showPokemon";
+    // }
 
     this.isOpen = function() { return false };
     $mdComponentRegistry
