@@ -6,6 +6,7 @@ angular.module("ngapp").service("shared", function(){ // One of The Ways To Shar
         title: "cordova-angular-angularMaterial-seed",
         auth: "Mario Aleo"
     };
+    
 });
 
 angular.module("ngapp").service("dataService", function(){
@@ -23,6 +24,6 @@ angular.module("ngapp").service("dataService", function(){
     }
 });
 
-angular.module("ngapp").service("PokemonService", function(){
+angular.module("ngapp").service("PokemonService", function($resource){
     return $resource('http://pokeapi.co/api/v2/pokemon/:id/?limit=20');
 });
