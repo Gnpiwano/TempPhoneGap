@@ -26,8 +26,8 @@ angular.module("ngapp").controller("MainController", function(shared,PokemonServ
         console.log("current pokemon: "+$scope.currentPokemon)
     }
     
-    $scope.go = function() {
-        shared.info.auth = "MyFukcingPokemon";    
+    $scope.go = function(pokemon) {
+        shared.info.auth = $scope.currentPokemon;    
         location.replace("#/detail");
     }
 
