@@ -1,8 +1,10 @@
 "use strict";
 
 angular.module("ngapp").controller("PokeDetailController", function(shared,PokemonService,$state, $scope, $mdSidenav, $mdComponentRegistry, $location){
-
-    $scope.info = shared.pokemon;
+    
+    $scope.pokemon = shared.currentPokemon;
+    console.log($scope.pokemon.url);
+    
     var ctrl = this;
 
     this.auth = shared.info.auth;
@@ -20,7 +22,7 @@ angular.module("ngapp").controller("PokeDetailController", function(shared,Pokem
             shared.pokemon = $scope.currentPokemon;
         });
     }
-    console.log($state);
+    
     $scope.initDetail = function(){
         console.log("current pokemon: "+$scope.currentPokemon)
     }

@@ -10,13 +10,13 @@ angular.module("ngapp").config(["$stateProvider", "$urlRouterProvider", function
     $stateProvider.state("main", {
         url: "/main",
         templateUrl: "app/components/main/main.html",
-        title: "Cordova Angular-Material",
+        title: "PokeDex",
         controller: "MainController",
         controllerAs: "main"
     }).state("detail",{
         url: "/detail",
         templateUrl: "app/components/PokeDetail/PokeDetail.html",
-        title: "Cordova Angular-Material",
+        title: "Pokedex Detail Page",
         controller: "PokeDetailController",
         controllerAs: "PokeDetail"
     });

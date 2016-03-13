@@ -1,9 +1,9 @@
 <md-toolbar flex ng-init='init()' layout-align="center center">
   <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-    <md-button class="md-icon-button md-primary" aria-label="Menu" ng-click="main.toggle()">
+    <md-button class="md-icon-button " aria-label="Menu" ng-click="main.toggle()">
       <ng-md-icon icon="menu"></ng-md-icon>
     </md-button>
-    <p>{{ main.title }}</p>
+    <p>{{ name }} {{ main.title }}</p>
     <div style="width: 40px; height: 40px;"></div>
   </div>
 </md-toolbar>
@@ -13,9 +13,9 @@
     <h1 class="md-toolbar-tools">SideNav Menu</h1>
   </md-toolbar>
   <md-list ng-cloak>
-    <md-list-item ng-href="http://www.google.com">
+    <md-list-item  ng-click="showPrompt($event)">
       <ng-md-icon icon="school"></ng-md-icon>
-      <p>Material Design</p>
+      <p>Change Name</p>
     </md-list-item>
     <md-list-item ng-href="http://www.google.com">
       <ng-md-icon icon="settings_ethernet"></ng-md-icon>
@@ -29,13 +29,14 @@
         <md-list>
             <md-subheader class="md-no-sticky">Pokemon list</md-subheader>
             
-            <md-content flex layout="row">
+            <md-content flex layout="row" layout-align="start start" >
                 <md-content flex="50">
                     <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons" id="popupContainer">
-                        <div class="md-list-item-text" layout="column">
-                            <h3>{{ pokemon.name }}</h3>
-                        </div>
-                        <md-button id="{{pokemon.name}}" ng-click="go()" class="md-secondary">&gt;</md-button>
+                        <md-button id="{{pokemon.name}}" ng-click="go()" class="md-secondary">
+                            <div class="md-list-item-text" layout="column">
+                                <h3>{{ pokemon.name }}  &gt;</h3>
+                            </div>
+                        </md-button>
                     </md-list-item>
                 </md-content>
             </md-content>
@@ -45,7 +46,12 @@
 </div>
 
 
-<!--<md-content flex>
+<!--    <md-button class="md-primary md-raised" ng-click="showPrompt($event)"  >
+      Prompt Dialog
+    </md-button>
+    
+    
+    <md-content flex>
     <md-list>
         <md-subheader class="md-no-sticky">Pokemon list</md-subheader>
         
