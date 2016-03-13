@@ -1,12 +1,38 @@
-<md-toolbar ng-init='init()' layout-align="center center">{{main.title}}</md-toolbar>
-<md-content>
+<md-toolbar flex ng-init='init()' layout-align="center center">{{main.title}}</md-toolbar>
+<div flex style="border: 1px solid firebrick;" layout="column">
+    <md-content flex>
+        <md-list>
+            <md-subheader class="md-no-sticky">Pokemon list</md-subheader>
+            
+            <md-content flex layout="row">
+                <md-content flex="50">
+                    <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons" id="popupContainer">
+                        <div class="md-list-item-text" layout="column">
+                            <h3>{{ pokemon.name }}</h3>
+                        </div>
+                        <md-button id="{{pokemon.name}}" ng-click="go()" class="md-secondary">&gt;</md-button>
+                    </md-list-item>
+                </md-content>
+            </md-content>
+        </md-list>
+    </md-content>
+
+</div>
+
+
+<!--<md-content flex>
     <md-list>
         <md-subheader class="md-no-sticky">Pokemon list</md-subheader>
-        <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons" id="popupContainer">
-            <div class="md-list-item-text" layout="column">
-                <h3>{{ pokemon.name }}</h3>
-            </div>
-            <md-button id="{{pokemon.name}}" ng-click="go()" class="md-secondary">&gt;</md-button>
-        </md-list-item>
+        
+        <md-content flex layout="row" layout-align="center">
+            <md-content flex="50">
+                <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons" id="popupContainer">
+                    <div class="md-list-item-text" layout="column">
+                        <h3>{{ pokemon.name }}</h3>
+                    </div>
+                    <md-button id="{{pokemon.name}}" ng-click="go()" class="md-secondary">&gt;</md-button>
+                </md-list-item>
+            </md-content>
+        </md-content>
     </md-list>
 </md-content>

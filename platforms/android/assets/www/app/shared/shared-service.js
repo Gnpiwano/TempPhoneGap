@@ -25,5 +25,5 @@ angular.module("ngapp").service("dataService", function(){
 });
 
 angular.module("ngapp").service("PokemonService", function($resource){
-    return $resource('http://pokeapi.co/api/v2/pokemon/:id/?limit=20');
+    return $resource('http://pokeapi.co/api/v2/pokemon/?limit=20');
 });
