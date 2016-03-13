@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.MaterialSeed" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="StatusBar">
         <param name="wp-package" value="StatusBar" />
     </feature>
-    <name>HelloCordova</name>
+    <name>MaterialSeed</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Cordova-AngularJS-angularMaterial Seed.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="" href="https://github.com/mario-aleo">
+        MarioAleo
     </author>
     <content src="index.html" />
     <access origin="*" />

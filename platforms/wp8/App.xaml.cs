@@ -32,7 +32,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
-namespace io.cordova.hellocordova
+namespace io.cordova.MaterialSeed
 {
     public partial class App : Application
     {

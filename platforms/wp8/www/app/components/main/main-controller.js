@@ -1,55 +1,63 @@
 "use strict";
 
-angular.module("ngapp").controller("MainController", function(shared, $state, $scope, $mdSidenav, $mdComponentRegistry){
-    
+angular.module("ngapp").controller("MainController", function(shared,PokemonService,$state, $scope, $mdSidenav, $mdComponentRegistry, $location){
+
     var ctrl = this;
+
+    this.auth = shared.info.auth;
+
+    console.log(shared.info.auth);
     
+    this.toggle = angular.noop;
+
+    this.title = $state.current.title;
+
+    $scope.init = function() {   
+         //hier ophalen
+        //TODO: local storage met expire date
+        PokemonService.get(function(data,err){
+            $scope.pokemons = data.results;
+            $scope.currentPokemon = $scope.pokemons[0];
+            shared.pokemon = $scope.currentPokemon;
+        });
+    }
+    console.log($state);
+    $scope.initDetail = function(){
+        console.log("current pokemon: "+$scope.currentPokemon)
+    }
     
-    ctrl.auth = shared.info.auth;
-    
-    
-    ctrl.toggle = angular.noop;
-    
-    
-    ctrl.seed = function(){
-        alert(shared.info.title);
-    };
-    
-    
-    ctrl.link = function(){
-        alert("");
-    };
-    
-    
-    ctrl.isOpen = function() { return false };
+    $scope.go = function(pokemon) {
+        shared.info.auth = $scope.currentPokemon;    
+        location.replace("#/detail");
+    }
+
+    $scope.showDetails = function(url){
+        //dataService.set(url);
+        console.log('setted: ' + JSON.stringify(url));
+        window.location.href = "#showPokemon";
+    }
+
+    this.isOpen = function() { return false };
     $mdComponentRegistry
-    .when("right")
+    .when("left")
     .then( function(sideNav){
       ctrl.isOpen = angular.bind( sideNav, sideNav.isOpen );
       ctrl.toggle = angular.bind( sideNav, sideNav.toggle );
     });
-    
-    
-    ctrl.toggleRight = function() {
-    $mdSidenav("right").toggle()
+
+    this.toggleRight = function() {
+    $mdSidenav("left").toggle()
         .then(function(){
         });
     };
-    
-    
-    ctrl.close = function() {
+
+    this.close = function() {
     $mdSidenav("right").close()
         .then(function(){
         });
     };
-    
-     
-    $scope.$watch("$state.current.title", function(newValue, oldValue) {
-        if (newValue === oldValue){
-            return; 
-        }
-        
-        ctrl.title = $state.current.title;
-        $scope.$apply();
-    }, true);
+});
+
+angular.module("ngapp").controller("listController", function($scope) {
+    $scope.listTitle = "testingtitle";
 });

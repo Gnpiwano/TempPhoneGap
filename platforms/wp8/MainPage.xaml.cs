@@ -34,7 +34,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Resources;
 
 
-namespace io.cordova.hellocordova
+namespace io.cordova.MaterialSeed
 {
     public partial class MainPage : PhoneApplicationPage
     {

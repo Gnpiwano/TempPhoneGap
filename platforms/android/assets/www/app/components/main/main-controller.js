@@ -1,11 +1,13 @@
 "use strict";
 
-angular.module("ngapp").controller("MainController", function(shared, dataService, $state, $scope, $mdSidenav, $mdComponentRegistry){
+angular.module("ngapp").controller("MainController", function(shared,PokemonService,$state, $scope, $mdSidenav, $mdComponentRegistry, $location){
 
     var ctrl = this;
 
     this.auth = shared.info.auth;
 
+    console.log(shared.info.auth);
+    
     this.toggle = angular.noop;
 
     this.title = $state.current.title;
@@ -16,12 +18,17 @@ angular.module("ngapp").controller("MainController", function(shared, dataServic
         PokemonService.get(function(data,err){
             $scope.pokemons = data.results;
             $scope.currentPokemon = $scope.pokemons[0];
-            console.log($scope.pokemons[0]);
+            shared.pokemon = $scope.currentPokemon;
         });
     }
-    
+    console.log($state);
     $scope.initDetail = function(){
         console.log("current pokemon: "+$scope.currentPokemon)
+    }
+    
+    $scope.go = function(pokemon) {
+        shared.info.auth = $scope.currentPokemon;    
+        location.replace("#/detail");
     }
 
     $scope.showDetails = function(url){

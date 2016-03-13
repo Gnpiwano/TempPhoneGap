@@ -1,0 +1,14 @@
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\Bin\Debug\ApplicationIcon.png
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\Bin\Debug\Background.png
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\Bin\Debug\io.cordova.MaterialSeed.dll
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\Bin\Debug\io.cordova.MaterialSeed.pdb
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\Bin\Debug\AppManifest.xaml
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\Bin\Debug\io.cordova.MaterialSeed.xap
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\obj\Debug\App.g.cs
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\obj\Debug\cordovalib\CordovaView.g.cs
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\obj\Debug\MainPage.g.cs
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\obj\Debug\io.cordova.MaterialSeed.g.resources
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\obj\Debug\io.cordova.MaterialSeed.dll
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\obj\Debug\io.cordova.MaterialSeed.pdb
+C:\Users\Gebruiker\Documents\TempPhoneGap\platforms\wp8\obj\Debug\XapCacheFile.xml
