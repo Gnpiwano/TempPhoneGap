@@ -1,3 +1,46 @@
-<h1>{{ pokemon.name }}</h1>
+<md-toolbar flex ng-init='init()' layout-align="center center">
+  <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+    <md-button class="md-icon-button " aria-label="Menu" ng-click="main.toggle()">
+      <ng-md-icon icon="menu"></ng-md-icon>
+    </md-button>
+    <p>{{ pokemon.name }}</p>
+    <div style="width: 40px; height: 40px;"></div>
+  </div>
+</md-toolbar>
 
-<h1>2e Pagina</h1>
+<md-sidenav class="md-sidenav-left" md-component-id="left">
+  <md-toolbar>
+    <h1 class="md-toolbar-tools">Settings</h1>
+  </md-toolbar>
+  <md-list ng-cloak>
+    <md-list-item  ng-click="showPrompt($event)">
+      <ng-md-icon icon="school"></ng-md-icon>
+      <p>Change Name</p>
+    </md-list-item>
+    <md-list-item ng-href="http://www.google.com">
+      <ng-md-icon icon="settings_ethernet"></ng-md-icon>
+      <p>Angular Material</p>
+    </md-list-item>
+  </md-list>
+</md-sidenav>
+
+
+<md-content flex layout-padding>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">All Info</span>
+                <span class="md-subhead">{{ pokemon }}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-lg card-media">
+                    <img src="{{pokemon.sprites.front_default}}" />
+                    <img src="{{pokemon.sprites.back_default}}" />
+                </div>
+            </md-card-title-media>
+        </md-card-title>
+        <md-content>
+        
+        </md-content>
+      </md-card>
+</md-content>

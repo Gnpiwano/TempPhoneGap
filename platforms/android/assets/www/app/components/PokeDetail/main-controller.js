@@ -1,8 +1,9 @@
 "use strict";
 
-angular.module("ngapp").controller("PokeDetailController", function(shared,PokemonService,$state, $scope, $mdSidenav, $mdComponentRegistry, $location){
+angular.module("ngapp").controller("PokeDetailController", function(shared,PokemonService,$resource,$state, $scope, $mdSidenav, $mdComponentRegistry, $location){
     
     $scope.pokemon = shared.currentPokemon;
+    console.log($scope.pokemon);
     console.log($scope.pokemon.url);
     
     var ctrl = this;
@@ -14,13 +15,9 @@ angular.module("ngapp").controller("PokeDetailController", function(shared,Pokem
     this.title = $state.current.title;
 
     $scope.init = function() {   
-         //hier ophalen
-        //TODO: local storage met expire date
-        PokemonService.get(function(data,err){
-            $scope.pokemons = data.results;
-            $scope.currentPokemon = $scope.pokemons[0];
-            shared.pokemon = $scope.currentPokemon;
-        });
+        
+        $scope.pokemon = $resource($scope.pokemon.url).get();
+        console.log("Resource" , $scope.pokemon);
     }
     
     $scope.initDetail = function(){

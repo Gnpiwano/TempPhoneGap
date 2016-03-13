@@ -10,7 +10,7 @@
 
 <md-sidenav class="md-sidenav-left" md-component-id="left">
   <md-toolbar>
-    <h1 class="md-toolbar-tools">SideNav Menu</h1>
+    <h1 class="md-toolbar-tools">Settings</h1>
   </md-toolbar>
   <md-list ng-cloak>
     <md-list-item  ng-click="showPrompt($event)">
@@ -34,6 +34,7 @@
                     <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons" id="popupContainer">
                         <md-button id="{{pokemon.name}}" ng-click="go()" class="md-secondary">
                             <div class="md-list-item-text" layout="column">
+                                <img src=
                                 <h3>{{ pokemon.name }}  &gt;</h3>
                             </div>
                         </md-button>

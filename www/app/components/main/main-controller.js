@@ -9,16 +9,21 @@ angular.module("ngapp").controller("MainController", function(shared,PokemonServ
     this.toggle = angular.noop;
 
     this.title = $state.current.title;
+    
+    
 
+    
     $scope.init = function() {   
          //hier ophalen
         //TODO: local storage met expire date
         
         PokemonService.get(function(data,err){
             $scope.pokemons = data.results;
-            $scope.currentPokemon = $scope.pokemons[0];
             shared.pokemon = $scope.currentPokemon;
         });
+        
+        var abc = $resource('http://pokeapi.co/api/v2/evolution-chain/?limit=20&offset=20');
+        console.log("Resource" , abc.get());
     }
     
     $scope.showPrompt = function(ev) {
