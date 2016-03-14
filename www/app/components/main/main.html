@@ -1,48 +1,50 @@
-<md-toolbar flex ng-init='init()' layout-align="center center">
-  <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-    <md-button class="md-icon-button " aria-label="Menu" ng-click="main.toggle()">
-      <ng-md-icon icon="menu"></ng-md-icon>
-    </md-button>
-    <p>{{ name }} {{ main.title }}</p>
-    <div style="width: 40px; height: 40px;"></div>
-  </div>
-</md-toolbar>
+<div md-swipe-right="onSwipeRight()">
+    <md-toolbar flex ng-init='init()' layout-align="center center">
+      <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+        <md-button class="md-icon-button " aria-label="Menu" ng-click="main.toggle()">
+          <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
+        <p>{{ name }} {{ main.title }}</p>
+        <div style="width: 40px; height: 40px;"></div>
+      </div>
+    </md-toolbar>
 
-<md-sidenav class="md-sidenav-left" md-component-id="left">
-  <md-toolbar>
-    <h1 class="md-toolbar-tools">Settings</h1>
-  </md-toolbar>
-  <md-list ng-cloak>
-    <md-list-item  ng-click="showPrompt($event)">
-      <ng-md-icon icon="school"></ng-md-icon>
-      <p>Change Name</p>
-    </md-list-item>
-    <md-list-item ng-href="http://www.google.com">
-      <ng-md-icon icon="settings_ethernet"></ng-md-icon>
-      <p>Angular Material</p>
-    </md-list-item>
-  </md-list>
-</md-sidenav>
+    <md-sidenav class="md-sidenav-left" md-component-id="left">
+      <md-toolbar>
+        <h1 class="md-toolbar-tools">Settings</h1>
+      </md-toolbar>
+      <md-list ng-cloak>
+        <md-list-item  ng-click="showPrompt($event)">
+          <ng-md-icon icon="school"></ng-md-icon>
+          <p>Change current Name</p>
+        </md-list-item>
+        <md-list-item ng-href="http://www.pokemon.com/nl/pokedex/">
+          <ng-md-icon icon="settings_ethernet"></ng-md-icon>
+          <p>More Pokemon</p>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
 
-<div flex style="border: 1px solid firebrick;" layout="column">
-    <md-content flex>
-        <md-list>
-            <md-subheader class="md-no-sticky">Pokemon list</md-subheader>
-            
-            <md-content flex layout="row" layout-align="start start" >
-                <md-content flex="50">
-                    <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons" id="popupContainer">
-                        <md-button id="{{pokemon.name}}" ng-click="go()" class="md-secondary">
-                            <div class="md-list-item-text" layout="column">
-                                <h3>{{ pokemon.name }}  &gt;</h3>
-                            </div>
-                        </md-button>
-                    </md-list-item>
+    <div flex style="border: 1px solid firebrick;" layout="column">
+        <md-content flex>
+            <md-list>
+                <md-subheader class="md-no-sticky">Pokemon list</md-subheader>
+
+                <md-content flex layout="row" layout-align="start start" >
+                    <md-content flex="50">
+                        <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons" id="popupContainer">
+                            <md-button id="{{pokemon.name}}" ng-click="goDetail()" class="md-secondary">
+                                <div class="md-list-item-text" layout="column">
+                                    <h3>{{ pokemon.name }}  &gt;</h3>
+                                </div>
+                            </md-button>
+                        </md-list-item>
+                    </md-content>
                 </md-content>
-            </md-content>
-        </md-list>
-    </md-content>
+            </md-list>
+        </md-content>
 
+    </div>
 </div>
 
 

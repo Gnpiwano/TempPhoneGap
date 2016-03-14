@@ -9,7 +9,7 @@ angular.module("ngapp").service("shared", function(){ // One of The Ways To Shar
     
     this.backgroundColor = "";
     this.currentPokemon = {};
-    
+
 });
 
 angular.module("ngapp").service("dataService", function(){
