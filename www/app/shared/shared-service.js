@@ -27,64 +27,6 @@ angular.module("ngapp").service("dataService", function(){
     }
 });
 
-angular.module("ngapp").service("PokemonServiceV2", function($resource) {
-    //var pokemoncount = 101;
-    //
-    //
-    //
-    //var db = openDatabase('pokeDexDb', '1.0', 'Pokedex pokemon database', 51000);
-    //var self = this;
-    //
-    //this.updatePokemons = function() {
-    //    var url = 'http://pokeapi.co/api/v2/pokemon/';
-    //
-    //    db.transaction(function(tx) {
-    //        tx.executeSql('CREATE TABLE IF NOT EXISTS pokemon (id unique, text)');
-    //        console.log("database Created");
-    //
-    //        for(var i = 1; i < pokemoncount; i++) {
-    //
-    //            var resource = $resource( url + i + "/").get();
-    //            console.log("Resource captured " , resource);
-    //
-    //            resource.$promise.then(function(data) {
-    //
-    //                tx.executeSql('INSERT INTO pokemon (id, text) VALUES ('+data.id+','+JSON.stringify(data)+')');
-    //                console.log("Inserted in database");
-    //
-    //                if(data.id == (pokemoncount - 1)) {
-    //                    console.log("all pokemon Updated");
-    //                }
-    //            });
-    //        }
-    //
-    //    })
-    //}
-
-    this.getPokemonShortInfo = function() {
-        //var pokemons = [];
-        //
-        //db.transaction(function(tx) {
-        //   tx.executeSql('SELECT * FROM pokemon', [], function (tx, results) {
-        //       for(var i = 0; i < results.rows.length; i++) {
-        //           pokemons.push(JSON.parse(results.rows.item(i).text));
-        //       }
-        //       console.log("done getPokemonShortInfo", pokemons);
-        //   });
-        //});
-        //
-        //return pokemons;
-    }
-
-    this.getPokemon = function(id) {
-
-    }
-
-    this.checkForUpdates = function() {
-
-    }
-});
-
 angular.module("ngapp").service("PokemonService", function($resource){
 
     var pokemoncount = 20;
@@ -147,4 +89,55 @@ angular.module("ngapp").service("PokemonService", function($resource){
         }
     }
 
+});
+
+angular.module("ngapp").service("SettingsMenu", function(shared, $mdDialog, $mdSidenav, $mdComponentRegistry) {
+
+    var ctrl = this;
+
+    this.isOpen = function() { return false };
+    $mdComponentRegistry
+        .when("left")
+        .then( function(sideNav){
+
+            ctrl.isOpen = angular.bind( sideNav, sideNav.isOpen );
+            ctrl.toggle = angular.bind( sideNav, sideNav.toggle );
+        });
+
+    this.toggleRight = function() {
+        $mdSidenav("left").toggle()
+            .then(function(){
+            });
+    };
+
+    this.close = function() {
+        $mdSidenav("right").close()
+            .then(function(){
+            });
+    };
+
+
+    this.onSwipeRight = function(ev) {
+        $mdSidenav("left").toggle();
+    }
+
+
+    this.showPrompt = function(ev) {
+        // Appending dialog to document.body to cover sidenav in docs app
+        var confirm = $mdDialog.prompt()
+            .title('Your Name')
+            .textContent(shared.name + ' is your current name')
+            .placeholder('New name')
+            .ariaLabel('name')
+            .targetEvent(ev)
+            .ok('Update')
+            .cancel('Cancel');
+        $mdDialog.show(confirm).then(function(result) {
+
+            window.localStorage.setItem("name", result);
+            shared.info.auth = result;
+        }, function() {
+            //TODO Cancel function
+        });
+    };
 });
