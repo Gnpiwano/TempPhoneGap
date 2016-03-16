@@ -39,6 +39,9 @@
         },
         "com.phonegap.plugins.OrientationLock": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "io.cordova.MaterialSeed"
         }
     },
     "dependent_plugins": {}

@@ -19,6 +19,10 @@
                         {
                             "xml": "<feature name=\"OrientationLock\"><param name=\"android-package\" value=\"com.plugin.phonegap.OrientationLock\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SQLitePlugin\"><param name=\"android-package\" value=\"io.sqlc.SQLitePlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -33,6 +37,9 @@
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "com.phonegap.plugins.OrientationLock": {
+            "PACKAGE_NAME": "io.cordova.MaterialSeed"
+        },
+        "cordova-sqlite-storage": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         }
     },
@@ -59,11 +66,20 @@
             "clobbers": [
                 "OrientationLock"
             ]
+        },
+        {
+            "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+            "id": "cordova-sqlite-storage.SQLitePlugin",
+            "pluginId": "cordova-sqlite-storage",
+            "clobbers": [
+                "SQLitePlugin"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.0.0",
         "cordova-plugin-statusbar": "2.0.0-dev",
-        "com.phonegap.plugins.OrientationLock": "0.1"
+        "com.phonegap.plugins.OrientationLock": "0.1",
+        "cordova-sqlite-storage": "0.8.4-dev"
     }
 }

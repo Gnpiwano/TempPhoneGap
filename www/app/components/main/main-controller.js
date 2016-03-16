@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("ngapp").controller("MainController", function(shared,PokemonServiceV2, $mdDialog,$cordovaSQLite,$resource, $state, $scope, $mdSidenav, $mdComponentRegistry, $timeout, $location){
+angular.module("ngapp").controller("MainController", function(shared,PokemonService, $mdDialog,$cordovaSQLite,$resource, $state, $scope, $mdSidenav, $mdComponentRegistry, $timeout, $location){
 
     var ctrl = this;
 
@@ -11,17 +11,14 @@ angular.module("ngapp").controller("MainController", function(shared,PokemonServ
     this.title = $state.current.title;
 
     $scope.init = function() {
-        //var pokes = PokemonService.getPokemons();
-        PokemonServiceV2.updatePokemons();
-        //PokemonService.checkForUpdates();
-        //$scope.pokemons = PokemonService.getPokemonShortInfo();
+        PokemonService.checkForUpdates();
+        $scope.pokemons = PokemonService.getPokemonShortInfo();
 
     }
 
-
     $scope.goDetail = function(pokemon) {
         var pokemon = this.pokemon;
-        shared.currentPokemon = pokemon;   
+        shared.currentPokemon = pokemon;
         location.replace("#/detail");
     }
 

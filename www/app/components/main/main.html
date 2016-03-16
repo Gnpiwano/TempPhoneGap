@@ -29,10 +29,11 @@
     <md-content>
         <md-list>
             <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons track by $index">
+                <img src="{{ pokemon.sprites.front_default }}"/>
                 <div class="md-list-item-text" ng-click="goDetail()">
                     <h3>{{ pokemon.name }}</h3>
                     <h4> {{ pokemon.url }} </h4>
-                    <p> temporary text</p>
+                    <p ng-repeat="t in pokemon.types"> {{ t.type.name }}</p>
                 </div>
                 <md-divider md-inset ng-if="!$last"></md-divider>
             </md-list-item>

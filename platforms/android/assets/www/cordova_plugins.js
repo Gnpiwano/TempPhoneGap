@@ -21,6 +21,14 @@ module.exports = [
         "clobbers": [
             "OrientationLock"
         ]
+    },
+    {
+        "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+        "id": "cordova-sqlite-storage.SQLitePlugin",
+        "pluginId": "cordova-sqlite-storage",
+        "clobbers": [
+            "SQLitePlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -28,7 +36,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.0.0",
     "cordova-plugin-statusbar": "2.0.0-dev",
-    "com.phonegap.plugins.OrientationLock": "0.1"
+    "com.phonegap.plugins.OrientationLock": "0.1",
+    "cordova-sqlite-storage": "0.8.4-dev"
 }
 // BOTTOM OF METADATA
 });
