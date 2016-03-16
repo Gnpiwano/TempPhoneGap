@@ -1,31 +1,18 @@
 "use strict";
 
 angular.module("ngapp").controller("PokeDetailController", function(shared,PokemonService,$resource,$state, $scope, $mdSidenav, $mdComponentRegistry, $location){
-    
+
     $scope.pokemon = shared.currentPokemon;
-    console.log($scope.pokemon);
-    console.log($scope.pokemon.url);
-    
-    var ctrl = this;
 
-    this.auth = shared.info.auth;
+    $scope.init = function() {
+        var tempPokemon = $resource("http://pokeapi.co/api/v2/pokemon/"+shared.currentPokemon.id+"/").get();
 
-    this.toggle = angular.noop;
-
-    this.title = $state.current.title;
-
-    $scope.init = function() {   
-        
-        $scope.pokemon = $resource($scope.pokemon.url).get();
-        console.log("Resource" , $scope.pokemon);
+        tempPokemon.$promise.then(function(data) {
+            $scope.pokemon = data;
+            console.log("Resource" , data);
+        });
     }
-    
-    $scope.initDetail = function(){
-        console.log("current pokemon: "+$scope.currentPokemon)
-    }
-    
-});
 
-angular.module("ngapp").controller("listController", function($scope) {
-    $scope.listTitle = "testingtitle";
+
+    
 });

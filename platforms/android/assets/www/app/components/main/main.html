@@ -1,10 +1,10 @@
-<div md-swipe-right="onSwipeRight()" md-swipe-left="onSwipeLeft()"style="height: 100vh; width:139vh; overflow:scroll;">
+<div md-swipe-right="menu.onSwipeRight()" style="height: 100%; width:100%; overflow:scroll;">
     <md-toolbar flex ng-init='init()' layout-align="center center">
       <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-        <md-button class="md-icon-button " aria-label="Menu" ng-click="main.toggle()">
+        <md-button class="md-icon-button " aria-label="Menu" ng-click="menu.toggle()">
           <ng-md-icon icon="menu"></ng-md-icon>
         </md-button>
-        <p>{{ name }} {{ main.title }}</p>
+        <p>{{ shared.info.auth }} {{ main.title }}</p>
         <div style="width: 40px; height: 40px;"></div>
       </div>
     </md-toolbar>
@@ -14,7 +14,7 @@
         <h1 class="md-toolbar-tools">Settings</h1>
       </md-toolbar>
       <md-list ng-cloak>
-        <md-list-item  ng-click="showPrompt($event)">
+        <md-list-item  ng-click="menu.showPrompt($event)">
           <ng-md-icon icon="school"></ng-md-icon>
           <p>Change current Name</p>
         </md-list-item>
@@ -29,10 +29,11 @@
     <md-content>
         <md-list>
             <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons track by $index">
+                <img src="{{ pokemon.sprites.front_default }}"/>
                 <div class="md-list-item-text" ng-click="goDetail()">
                     <h3>{{ pokemon.name }}</h3>
                     <h4> {{ pokemon.url }} </h4>
-                    <p> temporary text</p>
+                    <p ng-repeat="t in pokemon.types"> {{ t.type.name }}</p>
                 </div>
                 <md-divider md-inset ng-if="!$last"></md-divider>
             </md-list-item>
