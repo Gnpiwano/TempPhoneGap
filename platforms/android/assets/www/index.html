@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700">
 
+    <script type="text/javascript" src="assets/lib/lodash.min.js"></script>
+    
     <!-- AngularJs -->
     <script type="text/javascript" src="assets/lib/angular.min.js"></script>
     <script type="text/javascript" src="assets/lib/angular-ui-router.min.js"></script>
@@ -31,6 +33,8 @@
     
     <!--Overig (Guus)-->
     <script src="assets/lib/angular-resource.js"></script>
+    <script type="text/javascript" src="assets/lib/angular-simple-logger.min.js"></script>
+    <script type="text/javascript" src="assets/lib/angular-google-maps.min.js"></script>
     
 
     <!-- Cordova -->
@@ -49,11 +53,12 @@
     <!-- Controllers -->
     <script type="text/javascript" src="app/components/main/main-controller.js"></script>
     <script type="text/javascript" src="app/components/PokeDetail/main-controller.js"></script>
-
+    <script type="text/javascript" src="app/components/PokeMap/map_controller.js"></script>
+    
     <title>Hybrid app</title>
   </head>
 
-  <body  style="position: absolute; width: 100vh; height: 100vh;" ng-cloak >
+  <body  ng-cloak >
     <ui-view></ui-view>
 
   </body>

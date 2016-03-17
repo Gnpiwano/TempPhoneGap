@@ -15,6 +15,16 @@ body {
     width:100%;
 }
 
+.angular-google-map-container { height: 400px; }
+
+.bottom_button {
+    position: fixed;
+    bottom: 0;
+    background-color: #F44336;
+    height: 60px;
+    width: 100%;
+}
+
 /* Portrait layout (default) */
 .app {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */

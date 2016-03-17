@@ -1,7 +1,6 @@
 "use strict";
 
-angular.module("ngapp", ["ui.router", "ngMdIcons", "ngMaterial", "ngCordova", "ngStorage" ,"ngResource"])
-// ngTouch is No Longer Supported by Angular-Material
+angular.module("ngapp", ["ui.router", "ngMdIcons", "ngMaterial", "ngCordova", "ngStorage" ,"ngResource",'uiGmapgoogle-maps'])
 
 .run(function($rootScope, $cordovaDevice, $cordovaStatusbar){
   document.addEventListener("deviceready", function () {

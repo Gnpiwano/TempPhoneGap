@@ -21,5 +21,9 @@ angular.module("ngapp").controller("MainController", function(SettingsMenu, shar
         shared.currentPokemon = pokemon;
         location.replace("#/detail");
     }
+    
+    $scope.goMap = function() {
+        location.replace("#/map");
+    }
 
 });
