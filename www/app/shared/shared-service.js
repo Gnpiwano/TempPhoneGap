@@ -30,7 +30,7 @@ angular.module("ngapp").service("dataService", function(){
 
 angular.module("ngapp").service("PokemonService", function($resource, shared){
 
-    var pokemoncount = 5;
+    var pokemoncount = 40;
     var self = this;
     var count = 0;
 

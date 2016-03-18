@@ -6,12 +6,14 @@ angular.module("ngapp").controller("MainController", function(SettingsMenu, shar
     $scope.menu = SettingsMenu;
     $scope.shared = shared;
 
+
     this.toggle = angular.noop;
 
     this.title = $state.current.title;
 
     $scope.init = function() {
-        PokemonService.checkForUpdates();
+        //$scope.pokemons = shared.pokemons;
+        //PokemonService.checkForUpdates();
         $scope.pokemons = PokemonService.getPokemonShortInfo();
 
     }
@@ -23,6 +25,7 @@ angular.module("ngapp").controller("MainController", function(SettingsMenu, shar
     }
     
     $scope.goMap = function() {
+        //location.replace("#/loading");
         location.replace("#/map");
     }
 

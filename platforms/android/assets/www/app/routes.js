@@ -5,7 +5,7 @@ angular.module("ngapp").config(["$stateProvider", "$urlRouterProvider", function
     //console.log("StateProvider:",$stateProvider);
     //console.log("urlRouterProvider:",$urlRouterProvider);
     
-    $urlRouterProvider.otherwise("/main");
+    $urlRouterProvider.otherwise("/loading");
 
     $stateProvider.state("main", {
         url: "/main",
@@ -24,6 +24,12 @@ angular.module("ngapp").config(["$stateProvider", "$urlRouterProvider", function
         templateUrl: "app/components/PokeMap/main.html",
         title: "Pokedex Detail Page",
         controller: "pokeMapController",
+        controllerAs: "main"
+    }).state("loading", {
+        url: "/loading",
+        templateUrl: "app/components/loadingScreen/main.html",
+        title: "Loading pokedex",
+        controller: "loadingController",
         controllerAs: "main"
     });
 

@@ -7,6 +7,7 @@ angular.module("ngapp").service("shared", function($resource){ // One of The Way
         auth: window.localStorage['name'] || ''
     };
 
+    this.pokemons = [];
     this.backgroundColor = "";
     this.currentPokemon = {};
 
@@ -27,16 +28,17 @@ angular.module("ngapp").service("dataService", function(){
     }
 });
 
-angular.module("ngapp").service("PokemonService", function($resource){
+angular.module("ngapp").service("PokemonService", function($resource, shared){
 
-    var pokemoncount = 20;
+    var pokemoncount = 40;
     var self = this;
+    var count = 0;
 
     this.updatePokemons = function() {      //Haalt alle data op die op te halen is en slaat deze per pokemon op op het apparaat.
         console.log("UpdatePokemons ongoing");
         var url = 'http://pokeapi.co/api/v2/pokemon/';
 
-        for(var i = 1; i < pokemoncount; i++) {
+        for(var i = 1; i <= pokemoncount; i++) {
 
             var resource = $resource( url + i + "/").get();
 
@@ -49,10 +51,11 @@ angular.module("ngapp").service("PokemonService", function($resource){
                 pokemon.types = data.types;
 
                 window.localStorage.setItem("pokemon_"+data.id , JSON.stringify(pokemon));
-
-
-                if(data.id == (pokemoncount - 1)) {
-                    console.log("all pokemon Updated");
+                count++;
+                
+                if(count == pokemoncount) {
+                    var event = new CustomEvent("pokedex_ready");
+                    document.dispatchEvent(event);
                 }
             });
         }
@@ -80,10 +83,14 @@ angular.module("ngapp").service("PokemonService", function($resource){
 
             //if today > lastTody dan update behalve als today 0 is.
            if(today != lastToday && today > lastToday || today == 0) {
+               console.log("1");
                self.updatePokemons();
                window.localStorage.setItem("lastUpdatedDay", today);
+           } else {
+                location.replace("#/main");
            }
         } else {
+            console.log("3");
             window.localStorage.setItem("lastUpdatedDay", today);
             self.updatePokemons();
         }
