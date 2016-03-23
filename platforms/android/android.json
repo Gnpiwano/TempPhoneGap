@@ -17,6 +17,10 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"Compass\"><param name=\"android-package\" value=\"org.apache.cordova.deviceorientation.CompassListener\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
                             "count": 1
                         },
@@ -26,10 +30,6 @@
                         },
                         {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Compass\"><param name=\"android-package\" value=\"org.apache.cordova.deviceorientation.CompassListener\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -58,6 +58,9 @@
         "cordova-plugin-actionsheet": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "io.cordova.MaterialSeed"
+        },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         },
@@ -65,9 +68,6 @@
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.MaterialSeed"
-        },
-        "cordova-plugin-device-orientation": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         }
     },
@@ -85,6 +85,27 @@
             "id": "cordova-plugin-actionsheet.ActionSheet",
             "clobbers": [
                 "window.plugins.actionsheet"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device-orientation/www/CompassError.js",
+            "id": "cordova-plugin-device-orientation.CompassError",
+            "clobbers": [
+                "CompassError"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device-orientation/www/CompassHeading.js",
+            "id": "cordova-plugin-device-orientation.CompassHeading",
+            "clobbers": [
+                "CompassHeading"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device-orientation/www/compass.js",
+            "id": "cordova-plugin-device-orientation.compass",
+            "clobbers": [
+                "navigator.compass"
             ]
         },
         {
@@ -110,35 +131,14 @@
             "file": "plugins/cordova-plugin-whitelist/whitelist.js",
             "id": "cordova-plugin-whitelist.whitelist",
             "runs": true
-        },
-        {
-            "file": "plugins/cordova-plugin-device-orientation/www/CompassError.js",
-            "id": "cordova-plugin-device-orientation.CompassError",
-            "clobbers": [
-                "CompassError"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-device-orientation/www/CompassHeading.js",
-            "id": "cordova-plugin-device-orientation.CompassHeading",
-            "clobbers": [
-                "CompassHeading"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-device-orientation/www/compass.js",
-            "id": "cordova-plugin-device-orientation.compass",
-            "clobbers": [
-                "navigator.compass"
-            ]
         }
     ],
     "plugin_metadata": {
         "com.phonegap.plugins.OrientationLock": "0.1",
         "cordova-plugin-actionsheet": "2.2.2",
+        "cordova-plugin-device-orientation": "1.0.2",
         "cordova-plugin-geolocation": "2.1.0",
         "cordova-plugin-statusbar": "2.0.0-dev",
-        "cordova-plugin-whitelist": "1.0.0",
-        "cordova-plugin-device-orientation": "1.0.2"
+        "cordova-plugin-whitelist": "1.0.0"
     }
 }

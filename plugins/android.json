@@ -13,6 +13,9 @@
         "cordova-plugin-actionsheet": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "io.cordova.MaterialSeed"
+        },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         },
@@ -20,9 +23,6 @@
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.MaterialSeed"
-        },
-        "cordova-plugin-device-orientation": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         }
     },
