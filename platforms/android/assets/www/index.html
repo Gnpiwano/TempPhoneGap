@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ngapp">
+<html ng-app="ngapp" style="height: 100%;">
 
   <head>
     <meta charset="utf-8"/>
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700">
 
     <script type="text/javascript" src="assets/lib/lodash.min.js"></script>
-    
+
     <!-- AngularJs -->
     <script type="text/javascript" src="assets/lib/angular.min.js"></script>
     <script type="text/javascript" src="assets/lib/angular-ui-router.min.js"></script>
@@ -30,12 +30,11 @@
     <!-- Angular Material -->
     <script type="text/javascript" src="assets/lib/angular-material-icons.js"></script>
     <script type="text/javascript" src="assets/lib/angular-material.js"></script>
-    
+
     <!--Overig (Guus)-->
     <script src="assets/lib/angular-resource.js"></script>
     <script type="text/javascript" src="assets/lib/angular-simple-logger.min.js"></script>
     <script type="text/javascript" src="assets/lib/angular-google-maps.min.js"></script>
-    
 
     <!-- Cordova -->
     <script type="text/javascript" src="assets/lib/ng-cordova.min.js"></script>
@@ -51,16 +50,16 @@
     <script type="text/javascript" src="app/shared/shared-service.js"></script>
 
     <!-- Controllers -->
-    <script type="text/javascript" src="app/components/main/main-controller.js"></script>
-    <script type="text/javascript" src="app/components/PokeDetail/main-controller.js"></script>
-    <script type="text/javascript" src="app/components/PokeMap/map_controller.js"></script>
+    <script type="text/javascript" src="app/components/main/main_controller.js"></script>
+    <script type="text/javascript" src="app/components/pokeDetail/main_controller.js"></script>
+    <script type="text/javascript" src="app/components/pokeMap/map_controller.js"></script>
     <script type="text/javascript" src="app/components/loadingScreen/loading_controller.js"></script>
-    
-    
-    <title>Hybrid app</title>
+
+    <title>NgApp</title>
   </head>
 
-  <body  ng-cloak >
+  <body style="position: fixed; height: 100%;" ng-cloak>
+
     <ui-view></ui-view>
 
   </body>

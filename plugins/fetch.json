@@ -33,23 +33,28 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-sqlite-storage": {
+    "cordova-plugin-geolocation": {
         "source": {
-            "type": "git",
-            "url": "https://github.com/brodysoft/Cordova-SQLitePlugin.git",
-            "subdir": "."
+            "type": "registry",
+            "id": "cordova-plugin-geolocation@~2.1.0"
         },
         "is_top_level": true,
         "variables": {}
     },
-    "com.googlemaps.ios": {
+    "cordova-plugin-actionsheet": {
         "source": {
-            "type": "git",
-            "url": "https://bitbucket.org/nightstomp/cordova-plugin-googlemaps-sdk.git",
-            "subdir": ".",
-            "ref": "master"
+            "type": "registry",
+            "id": "cordova-plugin-actionsheet"
         },
         "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-device-orientation": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device-orientation"
+        },
+        "is_top_level": true,
         "variables": {}
     }
 }

@@ -2,14 +2,25 @@
 
 angular.module("ngapp").service("shared", function($resource){ // One of The Ways To Share Informations Across the Controllers
 
+    this.pokemons = [];
+    this.currentPokemon = {};
+    this.gpslocation = {latitude: 51.697816, longitude : 5.303675};
+    var self = this;
+
     this.info = {
         title: "Pokedex MD1",
         auth: window.localStorage['name'] || ''
     };
 
-    this.pokemons = [];
-    this.backgroundColor = "";
-    this.currentPokemon = {};
+    this.setLocation = function(){
+        navigator.geolocation.getCurrentPosition(function(position) {
+            self.gpslocation = position.coords;
+            console.log(self.gpslocation);
+        }, function(error) {
+            console.log(error);
+        })
+    }
+
 
 });
 
@@ -30,9 +41,18 @@ angular.module("ngapp").service("dataService", function(){
 
 angular.module("ngapp").service("PokemonService", function($resource, shared){
 
-    var pokemoncount = 40;
+    var pokemoncount = 10;
     var self = this;
     var count = 0;
+
+    var getRandomNumber = function(number) {
+        var scale = 7;
+        if(Math.random() < 0.5) {
+            return number + (Math.random() / 7);
+        } else {
+            return number - (Math.random() / 7);
+        }
+    }
 
     this.updatePokemons = function() {      //Haalt alle data op die op te halen is en slaat deze per pokemon op op het apparaat.
         console.log("UpdatePokemons ongoing");
@@ -49,10 +69,12 @@ angular.module("ngapp").service("PokemonService", function($resource, shared){
                 pokemon.sprites = data.sprites;
                 pokemon.abilities = data.abilities;
                 pokemon.types = data.types;
+                pokemon.latitude = getRandomNumber(shared.gpslocation.latitude);
+                pokemon.longitude = getRandomNumber(shared.gpslocation.longitude);
 
                 window.localStorage.setItem("pokemon_"+data.id , JSON.stringify(pokemon));
                 count++;
-                
+
                 if(count == pokemoncount) {
                     var event = new CustomEvent("pokedex_ready");
                     document.dispatchEvent(event);
@@ -67,6 +89,7 @@ angular.module("ngapp").service("PokemonService", function($resource, shared){
             var resource = JSON.parse(window.localStorage.getItem("pokemon_"+i));
             pokemons.push(resource);
         }
+        shared.pokemons = pokemons;
         return pokemons;
     }
 
@@ -82,13 +105,13 @@ angular.module("ngapp").service("PokemonService", function($resource, shared){
             var lastToday = window.localStorage.getItem("lastUpdatedDay");
 
             //if today > lastTody dan update behalve als today 0 is.
-           if(today != lastToday && today > lastToday || today == 0) {
-               console.log("1");
-               self.updatePokemons();
-               window.localStorage.setItem("lastUpdatedDay", today);
-           } else {
+            if(today != lastToday && today > lastToday || today == 0) {
+                console.log("1");
+                self.updatePokemons();
+                window.localStorage.setItem("lastUpdatedDay", today);
+            } else {
                 location.replace("#/main");
-           }
+            }
         } else {
             console.log("3");
             window.localStorage.setItem("lastUpdatedDay", today);

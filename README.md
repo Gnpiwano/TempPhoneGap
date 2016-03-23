@@ -51,3 +51,7 @@ Just clone it to your computer and use it to initialize your projects.
 
 * This project is my favorite son, I'll always keep improving it, so anything you want to share with me or any questions you can ask me and/or open an issue, just make a good title so anyone can know what it's about.
 
+* Keep in mind that information and knowledge always get better when it's shared with anyone, feel free to use this seed, but still I'd be glad if you mention this repository on your code or repository or share it with your friends. Also, if you do something, I would be glad to receive a link showing your repository or work.
+  
+### I'm pretty sure that:
+![That's all Folks!](http://junkee.com/wp-content/uploads/2013/08/thats-all-folks-7172-1280x800.jpg)

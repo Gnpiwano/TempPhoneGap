@@ -1,44 +1,44 @@
 <div md-swipe-right="menu.onSwipeRight()">
-    <md-toolbar flex ng-init='init()' layout-align="center center">
-      <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-        <md-button class="md-icon-button " aria-label="Menu" ng-click="menu.toggle()">
-          <ng-md-icon icon="menu"></ng-md-icon>
-        </md-button>
-        <p>{{ shared.info.auth }} {{ main.title }}</p>
-        <div style="width: 40px; height: 40px;"></div>
-      </div>
-    </md-toolbar>
-
-    <md-sidenav class="md-sidenav-left" md-component-id="left">
-      <md-toolbar>
-        <h1 class="md-toolbar-tools">Settings</h1>
-      </md-toolbar>
-      <md-list ng-cloak>
-        <md-list-item  ng-click="menu.showPrompt($event)">
-          <ng-md-icon icon="school"></ng-md-icon>
-          <p>Change current Name</p>
-        </md-list-item>
-        <md-list-item ng-href="http://www.pokemon.com/nl/pokedex/">
-          <ng-md-icon icon="settings_ethernet"></ng-md-icon>
-          <p>More Pokemon</p>
-        </md-list-item>
-      </md-list>
-    </md-sidenav>
-
-
-    <md-content>
-        <md-list style="height: 80%;">
-            <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons track by $index">
-                <img src="{{ pokemon.sprites.front_default }}"/>
-                <div class="md-list-item-text" ng-click="goDetail()">
-                    <h3>{{ pokemon.name }}</h3>
-                    <h4> {{ pokemon.url }} </h4>
-                    <p ng-repeat="t in pokemon.types"> {{ t.type.name }}</p>
-                </div>
-                <md-divider md-inset ng-if="!$last"></md-divider>
-            </md-list-item>
-        </md-list>
-    </md-content>
-    <div class="bottom_button" ng-click="goMap()">
+  <md-toolbar flex ng-init='init()' layout-align="center center">
+    <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+      <md-button class="md-icon-button " aria-label="Menu" ng-click="menu.toggle()">
+        <ng-md-icon icon="menu"></ng-md-icon>
+      </md-button>
+      <p>{{ shared.info.auth }} {{ main.title }}</p>
+      <div style="width: 40px; height: 40px;"></div>
     </div>
+  </md-toolbar>
+
+  <md-sidenav class="md-sidenav-left" md-component-id="left">
+    <md-toolbar>
+      <h1 class="md-toolbar-tools">Settings</h1>
+    </md-toolbar>
+    <md-list ng-cloak>
+      <md-list-item  ng-click="menu.showPrompt($event)">
+        <ng-md-icon icon="school"></ng-md-icon>
+        <p>Change current Name</p>
+      </md-list-item>
+      <md-list-item ng-href="http://www.pokemon.com/nl/pokedex/">
+        <ng-md-icon icon="settings_ethernet"></ng-md-icon>
+        <p>More Pokemon</p>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+
+
+  <md-content>
+    <md-list style="height: 80%;">
+      <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons track by $index">
+        <img src="{{ pokemon.sprites.front_default }}"/>
+        <div class="md-list-item-text" ng-click="goDetail()">
+          <h3>{{ pokemon.name }}</h3>
+          <h4> {{ pokemon.url }} </h4>
+          <p ng-repeat="t in pokemon.types"> {{ t.type.name }}</p>
+        </div>
+        <md-divider md-inset ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-content>
+  <div class="bottom_button" ng-click="goMap()">
+  </div>
 </div>

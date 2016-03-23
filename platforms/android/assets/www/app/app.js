@@ -1,6 +1,7 @@
 "use strict";
 
-angular.module("ngapp", ["ui.router", "ngMdIcons", "ngMaterial", "ngCordova", "ngStorage" ,"ngResource",'uiGmapgoogle-maps'])
+angular.module("ngapp", [ "ngTouch", "ui.router", "ngMdIcons", "ngMaterial", "ngCordova", "ngStorage" ,"ngResource",'uiGmapgoogle-maps'])
+// ngTouch is No Longer Supported by Angular-Material
 
 .run(function($rootScope, $cordovaDevice, $cordovaStatusbar){
   document.addEventListener("deviceready", function () {
@@ -8,16 +9,9 @@ angular.module("ngapp", ["ui.router", "ngMdIcons", "ngMaterial", "ngCordova", "n
     $cordovaStatusbar.styleHex('#E53935'); // Status Bar With Red Color, Using Angular-Material Style
     window.plugins.orientationLock.lock("portrait");
   }, false);
-  /*Hijack Android Back Button (You Can Set Different Functions for Each View by Checking the $state.current)*/
   document.addEventListener("backbutton", function (e) {
-      alert("Test Go Back Button");
-
-      //if($state.is('detail')){
-      //  location.replace("#/main");
-      //}  else{
-      //  e.preventDefault();
-      //}
-
+        location.replace("#/main");
+        $scope.apply();
     }, false);
 })
 
