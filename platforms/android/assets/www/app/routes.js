@@ -4,7 +4,7 @@ angular.module("ngapp").config(["$stateProvider", "$urlRouterProvider", function
 
     //console.log("StateProvider:",$stateProvider);
     //console.log("urlRouterProvider:",$urlRouterProvider);
-    
+
     $urlRouterProvider.otherwise("/loading");
 
     $stateProvider.state("main", {

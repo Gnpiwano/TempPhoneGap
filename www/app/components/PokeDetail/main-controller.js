@@ -9,7 +9,17 @@ angular.module("ngapp").controller("PokeDetailController", function(shared,Pokem
 
         tempPokemon.$promise.then(function(data) {
             $scope.pokemon = data;
-            console.log("Resource" , data);
+            //console.log("Resource" , data);
+            document.addEventListener("backbutton", function (e) {
+                alert("Test Go Back Button");
+
+                //if($state.is('detail')){
+                //  location.replace("#/main");
+                //}  else{
+                //  e.preventDefault();
+                //}
+
+            }, false);
         });
     }
 

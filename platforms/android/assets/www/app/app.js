@@ -11,11 +11,13 @@ angular.module("ngapp", ["ui.router", "ngMdIcons", "ngMaterial", "ngCordova", "n
   /*Hijack Android Back Button (You Can Set Different Functions for Each View by Checking the $state.current)*/
   document.addEventListener("backbutton", function (e) {
       alert("Test Go Back Button");
-      if($state.is('detail')){
-        location.replace("#/main");
-      }  else{
-        e.preventDefault();
-      }
+
+      //if($state.is('detail')){
+      //  location.replace("#/main");
+      //}  else{
+      //  e.preventDefault();
+      //}
+
     }, false);
 })
 
