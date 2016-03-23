@@ -15,7 +15,7 @@ angular.module("ngapp").controller("MainController", function(SettingsMenu, shar
         //$scope.pokemons = shared.pokemons;
         //PokemonService.checkForUpdates();
         $scope.pokemons = PokemonService.getPokemonShortInfo();
-        shared.setLocation();
+        //shared.setLocation();
 
     }
 

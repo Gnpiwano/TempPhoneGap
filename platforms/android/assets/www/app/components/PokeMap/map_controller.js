@@ -40,14 +40,17 @@ angular.module("ngapp").controller("pokeMapController", function(SettingsMenu, s
         frequency: 3000
     }; // Update every 3 seconds
 
+     $scope.compass = function() {
+         var currentDegree = 0;
+
+     }
+
     $scope.init = function() {
         createMapMarkers();
+
         if(navigator.compass != null) {
-            alert("Compass is null");
-        } else {
-            alert("Compass is not null", navigator.compass);
+            navigator.compass.watchHeading(onSuccess, onError, options);
         }
-        //navigator.compass.watchHeading(onSuccess, onError, options);
     }
 
 
