@@ -1,7 +1,7 @@
 <div class="headDiv" md-swipe-right="menu.onSwipeRight()"  style="height: 100%;">
     <md-toolbar flex ng-init='init()' layout-align="center center">
         <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-            <md-button class="md-icon-button " aria-label="Menu" ng-click="main.toggle()">
+            <md-button class="md-icon-button " aria-label="Menu" ng-click="main.toggleRight()">
                 <ng-md-icon icon="menu"></ng-md-icon>
             </md-button>
             <p>{{ pokemon.name }}</p>
@@ -29,7 +29,6 @@
         <ui-gmap-markers models="Markers" coords="'self'" icon="'icon'">
         </ui-gmap-markers>
     </ui-gmap-google-map>
-
     <!--<md-button class="md-raised" ng-click="navigateTo()">Button</md-button>-->
 </div>
 

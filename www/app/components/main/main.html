@@ -1,7 +1,7 @@
 <div md-swipe-right="menu.onSwipeRight()">
   <md-toolbar flex ng-init='init()' layout-align="center center">
     <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-      <md-button class="md-icon-button " aria-label="Menu" ng-click="menu.toggle()">
+      <md-button class="md-icon-button " aria-label="Menu" ng-click="main.toggleRight()">
         <ng-md-icon icon="menu"></ng-md-icon>
       </md-button>
       <p>{{ shared.info.auth }} {{ main.title }}</p>
@@ -27,7 +27,7 @@
 
 
   <md-content>
-    <md-list style="height: 80%;">
+    <md-list style="overflow-y: scroll; height: 94vh">
       <md-list-item class="md-3-line" ng-repeat="pokemon in pokemons track by $index">
         <img src="{{ pokemon.sprites.front_default }}"/>
         <div class="md-list-item-text" ng-click="goDetail()">
@@ -39,6 +39,8 @@
       </md-list-item>
     </md-list>
   </md-content>
+
   <div class="bottom_button" ng-click="goMap()">
+    <img class="center" src="assets/maps.png" style="margin-top: 5px; height: 80%; width: auto;"/>
   </div>
 </div>

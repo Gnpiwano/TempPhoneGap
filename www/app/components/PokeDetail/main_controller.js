@@ -6,12 +6,12 @@ angular.module("ngapp").controller("PokeDetailController", function(SettingsMenu
     $scope.menu = SettingsMenu;
 
     $scope.init = function() {
-        var tempPokemon = $resource("http://pokeapi.co/api/v2/pokemon/"+shared.currentPokemon.id+"/").get();
+        //var tempPokemon = $resource("http://pokeapi.co/api/v2/pokemon/"+shared.currentPokemon.id+"/").get();
 
-        tempPokemon.$promise.then(function(data) {
-            $scope.pokemon = data;
+        //tempPokemon.$promise.then(function(data) {
+         //   $scope.pokemon = data;
             //console.log("Resource" , data);
-        });
+       // });
     }
 
 

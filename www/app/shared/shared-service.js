@@ -41,7 +41,7 @@ angular.module("ngapp").service("dataService", function(){
 
 angular.module("ngapp").service("PokemonService", function($resource, shared){
 
-    var pokemoncount = 10;
+    var pokemoncount = 6;  //tested with 30
     var self = this;
     var count = 0;
 
@@ -71,6 +71,10 @@ angular.module("ngapp").service("PokemonService", function($resource, shared){
                 pokemon.types = data.types;
                 pokemon.latitude = getRandomNumber(shared.gpslocation.latitude);
                 pokemon.longitude = getRandomNumber(shared.gpslocation.longitude);
+                pokemon.height = data.height;
+                pokemon.weight = data.weight;
+                pokemon.base_experience = data.base_experience;
+                pokemon.order = data.order;
 
                 window.localStorage.setItem("pokemon_"+data.id , JSON.stringify(pokemon));
                 count++;
@@ -98,6 +102,7 @@ angular.module("ngapp").service("PokemonService", function($resource, shared){
     }
 
     this.checkForUpdates = function() {
+        shared.setLocation();
         var today = new Date().getDay();
 
         //window.localStorage.removeItem("lastUpdatedDay");

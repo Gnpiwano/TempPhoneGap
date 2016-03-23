@@ -17,7 +17,7 @@ body {
 .headDiv {
     height: 100%;
 }
-.angular-google-map-container { height: 60vh; }
+.angular-google-map-container { height: 100vh; }
 
 .bottom_button {
     position: fixed;

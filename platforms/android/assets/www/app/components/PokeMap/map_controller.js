@@ -5,6 +5,9 @@ angular.module("ngapp").controller("pokeMapController", function(SettingsMenu, s
     $scope.pokemon = shared.currentPokemon;
     $scope.menu = SettingsMenu;
 
+    $scope.compass = {
+        data: 1
+    };
     $scope.map = {
         center: { latitude: shared.gpslocation.latitude, longitude: shared.gpslocation.longitude },
         zoom: 11,
@@ -12,8 +15,6 @@ angular.module("ngapp").controller("pokeMapController", function(SettingsMenu, s
     };
 
     $scope.Markers = [];
-
-
 
     var createMapMarkers = function() {
         var M = [];
@@ -28,27 +29,25 @@ angular.module("ngapp").controller("pokeMapController", function(SettingsMenu, s
         $scope.Markers = M;
     }
 
-    function onSuccess(heading) {
-        console.log("Succes", heading);
-    };
+    function onSuccess(acceleration) {
+        alert('Acceleration X: ' + acceleration.x + '\n' +
+            'Acceleration Y: ' + acceleration.y + '\n' +
+            'Acceleration Z: ' + acceleration.z + '\n' +
+            'Timestamp: '      + acceleration.timestamp + '\n');
+    }
 
-    function onError(compassError) {
-        alert('Compass error: ' + compassError.code);
-    };
+    function onError() {
+        alert('onError!');
+    }
 
-    var options = {
-        frequency: 3000
-    }; // Update every 3 seconds
 
     $scope.init = function() {
-        createMapMarkers();
-        if(navigator.compass != null) {
-            alert("Compass is null");
-        } else {
-            alert("Compass is not null", navigator.compass);
-        }
-        //navigator.compass.watchHeading(onSuccess, onError, options);
+        setTimeout(function(){
+            navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+        }, 1000);
+
     }
+
 
 
 });

@@ -18,5 +18,4 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 	<preference name="android-targetSdkVersion" value="14" /> <preference name="android-minSdkVersion" value="17" />
-    <plugin name="org.apache.cordova.device-orientation" spec="0.3.1" source="pgb" />
 </widget>
