@@ -19,4 +19,5 @@
     </platform>
 
     <plugin name="org.apache.cordova.device-orientation" spec="0.3.1" source="pgb" />
+    <preference name="android-minSdkVersion" value="20" />
 </widget>
