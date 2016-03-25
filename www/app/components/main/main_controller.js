@@ -12,9 +12,11 @@ angular.module("ngapp").controller("MainController", function(SettingsMenu, shar
     this.title = $state.current.title;
 
     $scope.init = function() {
+
         //$scope.pokemons = shared.pokemons;
         //PokemonService.checkForUpdates();
         $scope.pokemons = PokemonService.getPokemonShortInfo();
+        console.log($scope.pokemons);
         shared.setLocation();
 
     }

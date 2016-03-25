@@ -4,10 +4,9 @@ angular.module("ngapp").controller("pokeMapController", function(SettingsMenu, s
 
     $scope.pokemon = shared.currentPokemon;
     $scope.menu = SettingsMenu;
+    $scope.closestPokemon = {};
+    var watchID;
 
-    $scope.compass = {
-        data: 1
-    };
     $scope.map = {
         center: { latitude: shared.gpslocation.latitude, longitude: shared.gpslocation.longitude },
         zoom: 11,
@@ -19,35 +18,90 @@ angular.module("ngapp").controller("pokeMapController", function(SettingsMenu, s
     var createMapMarkers = function() {
         var M = [];
         for(var i = 0; i < shared.pokemons.length; i++) {
-            var pointer = {};
-            pointer.id = i;
-            pointer.latitude = shared.pokemons[i].latitude;
-            pointer.longitude = shared.pokemons[i].longitude;
-            pointer.icon = shared.pokemons[i].sprites.front_default;
-            M.push(pointer);
+            if(shared.pokemons[i].longitude != null && shared.pokemons[i].latitude != null) {
+                var pointer = {};
+                pointer.id = i;
+                console.log(i + " - " + shared.pokemons[i].id);
+                pointer.latitude = shared.pokemons[i].latitude;
+                pointer.longitude = shared.pokemons[i].longitude;
+                pointer.icon = shared.pokemons[i].sprites.front_default;
+                M.push(pointer);
+            }
         }
         $scope.Markers = M;
     }
 
+    var clickPokemon = function() {
+        console.log("Jep you clicked a pokemon");
+    }
+
+    $scope.init = function() {
+
+        createMapMarkers();
+        checkSurrounding();
+
+    }
+
     function onSuccess(acceleration) {
-        alert('Acceleration X: ' + acceleration.x + '\n' +
-            'Acceleration Y: ' + acceleration.y + '\n' +
-            'Acceleration Z: ' + acceleration.z + '\n' +
-            'Timestamp: '      + acceleration.timestamp + '\n');
+
+        if($scope.closestPokemon != null) {
+
+            if(acceleration.x > 10 || acceleration.y > 10 || acceleration.z > 10) {
+                shared.pokemons[$scope.closestPokemon.id - 1].latitude = null;
+                shared.pokemons[$scope.closestPokemon.id - 1].longitude = null;
+
+                for(var i = 0; i < $scope.Markers.length; i++) {
+                    if(($scope.closestPokemon.id - 1) == $scope.Markers[i].id) {
+                        $scope.Markers.splice(i, 1);
+                        $scope.$apply();
+                        shared.pokemons[$scope.closestPokemon.id - 1].caught = "OWNED";
+
+                        alert("Jeuj je hebt de pokemon gevangen." + $scope.closestPokemon.name);
+                        PokemonService.updatePokemon($scope.closestPokemon);
+                        $scope.closestPokemon = null;
+                        navigator.accelerometer.clearWatch(watchID);
+                        watchID = null;
+                        checkSurrounding();
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     function onError() {
         alert('onError!');
     }
 
+    var options = { frequency: 1000 };  // Update every second
 
-    $scope.init = function() {
-        setTimeout(function(){
-            navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-        }, 1000);
+    var checkSurrounding = function() {
+        var margin = 0.08;
+        setTimeout(function() {
+            for(var i = 0; i < shared.pokemons.length; i++) {
+                var p = shared.pokemons[i];
+
+                if(Math.abs(p.latitude - shared.gpslocation.latitude) < margin) {
+                    if(Math.abs(p.longitude - shared.gpslocation.longitude) < margin) {
+
+                        $scope.closestPokemon = shared.pokemons[i];
+                        $scope.$apply();
+                        if(navigator.accelerometer != null && watchID == null ) {
+                            watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+                        }
+                        return;
+                    }
+                }
+        }
+            //stop watch
+            if(watchID != null) {
+                navigator.accelerometer.clearWatch(watchID);
+                watchID = null;
+            }
+            checkSurrounding();
+        }, 2000);
 
     }
-
 
 
 });

@@ -41,7 +41,7 @@ angular.module("ngapp").service("dataService", function(){
 
 angular.module("ngapp").service("PokemonService", function($resource, shared){
 
-    var pokemoncount = 6;  //tested with 30
+    var pokemoncount = 15;  //tested with 30
     var self = this;
     var count = 0;
 
@@ -85,6 +85,10 @@ angular.module("ngapp").service("PokemonService", function($resource, shared){
                 }
             });
         }
+    }
+
+    this.updatePokemon = function(pokemon) {
+        window.localStorage.setItem("pokemon_"+pokemon.id, JSON.stringify(pokemon));
     }
 
     this.getPokemonShortInfo = function() {
@@ -140,6 +144,7 @@ angular.module("ngapp").service("SettingsMenu", function(shared, $mdDialog, $mdS
         });
 
     this.toggleRight = function() {
+        alert("Test click");
         $mdSidenav("left").toggle()
             .then(function(){
             });
@@ -153,6 +158,10 @@ angular.module("ngapp").service("SettingsMenu", function(shared, $mdDialog, $mdS
 
 
     this.onSwipeRight = function(ev) {
+        $mdSidenav("left").toggle();
+    }
+
+    this.openMenu = function() {
         $mdSidenav("left").toggle();
     }
 
