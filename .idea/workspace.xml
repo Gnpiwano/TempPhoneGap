@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5f443aa-47b6-4e75-893b-c81f88752d3a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/app/components/PokeDetail/main.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/app/components/PokeDetail/main_controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/app/components/PokeMap/main.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/app/components/PokeMap/map_controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/app/components/loadingScreen/loading_controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/app/components/loadingScreen/main.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/components/profile/main-controller.js" afterPath="$PROJECT_DIR$/www/app/components/profile/main-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/shared/location-service.js" afterPath="$PROJECT_DIR$/www/app/shared/location-service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/components/detail/main-controller.js" afterPath="$PROJECT_DIR$/www/app/components/detail/main-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/shared/data-service.js" afterPath="$PROJECT_DIR$/www/app/shared/data-service.js" />
     </list>
     <ignored path="TempPhoneGap.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,16 +34,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu-service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/app/shared/menu-service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/app/routes.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,8 +47,8 @@
       <file leaf-file-name="main-controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/app/components/detail/main-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24665178">
-              <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.49330357">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -74,7 +58,17 @@
         <entry file="file://$PROJECT_DIR$/www/app/shared/data-service.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+              <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/app/components/detail/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -149,11 +143,12 @@
         <option value="$PROJECT_DIR$/www/app/shared/shared-service.js" />
         <option value="$PROJECT_DIR$/www/app/components/main/main.html" />
         <option value="$PROJECT_DIR$/www/app/components/pokeMap/map_controller.js" />
-        <option value="$PROJECT_DIR$/www/app/shared/data-service.js" />
         <option value="$PROJECT_DIR$/www/app/app.js" />
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/app/components/profile/main-controller.js" />
         <option value="$PROJECT_DIR$/www/app/shared/location-service.js" />
+        <option value="$PROJECT_DIR$/www/app/shared/data-service.js" />
+        <option value="$PROJECT_DIR$/www/app/components/detail/main-controller.js" />
       </list>
     </option>
   </component>
@@ -648,14 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/shared/data-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/app/shared/location-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -664,10 +651,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/shared/data-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/components/detail/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/app/components/detail/main-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24665178">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.49330357">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding />
         </state>
       </provider>
