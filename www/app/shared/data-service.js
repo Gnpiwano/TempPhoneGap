@@ -3,7 +3,7 @@
 angular.module("ngapp").service("data", function($resource, shared, location){
 
     var url = 'http://pokeapi.co/api/v2/pokemon/';
-    var pokemonCount = 18;
+    var pokemonCount = 7;
     var ctrl = this;
     var count = 1;
 

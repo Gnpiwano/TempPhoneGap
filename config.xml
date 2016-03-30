@@ -7,7 +7,8 @@
     <author email="" href="https://github.com/mario-aleo">
         MarioAleo
     </author>
-	
+
+    <feature name="http://api.phonegap.com/1.0/battery"/>
 	<feature name="http://api.phonegap.com/1.0/camera"/>
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	
@@ -22,11 +23,15 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
+    <!--<platform name="android">-->
+        <!--<allow-intent href="market:*" />-->
+    <!--</platform>-->
+    <!--<platform name="ios">-->
+        <!--<allow-intent href="itms:*" />-->
+        <!--<allow-intent href="itms-apps:*" />-->
+    <!--</platform>-->
+
+    <feature name="http://api.phonegap.com/1.0/battery"/>
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
 </widget>
