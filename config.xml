@@ -53,6 +53,7 @@
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1"/>
     <plugin name="com.logilite.vision.camera" spec="0.2.11" source="pgb" />
+    <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
 
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

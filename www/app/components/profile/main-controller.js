@@ -17,6 +17,7 @@ angular.module("ngapp").controller("profileController", function(shared, $mdToas
     }
 
     $scope.updateProfilePicture = function() {
+        alert("1");
         if(window.navigator.camera != undefined) {
             alert("window.navigator.camera is not undefined");
             window.navigator.camera.getPicture(function(imageData) {
@@ -25,6 +26,7 @@ angular.module("ngapp").controller("profileController", function(shared, $mdToas
             }, function(error) {alert(error) }, { quality: 50,
                 destinationType: Camera.DestinationType.FILE_URI });
         } else {
+            alert("2");
             cameraError("Platform not supported");
         }
     }
