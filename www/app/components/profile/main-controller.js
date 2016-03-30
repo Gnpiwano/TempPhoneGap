@@ -18,6 +18,7 @@ angular.module("ngapp").controller("profileController", function(shared, $mdToas
 
     $scope.updateProfilePicture = function() {
         if(window.navigator.camera != undefined) {
+            alert("window.navigator.camera is not undefined");
             window.navigator.camera.getPicture(function(imageData) {
                 window.localStorage['profilePicture'] = imageData;
                 $scope.pictureSrc = imageData;
