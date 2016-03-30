@@ -30,7 +30,7 @@
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
     </feature>
-    <name>MaterialSeed</name>
+    <name>Hybrid MD1</name>
     <description> Cordova-AngularJS-angularMaterial Seed. </description>
     <author email="" href="https://github.com/mario-aleo"> MarioAleo </author>
     <content src="index.html" />

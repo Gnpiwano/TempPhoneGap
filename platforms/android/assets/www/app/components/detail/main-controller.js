@@ -1,8 +1,7 @@
 "use strict";
 
-"use strict";
-
 angular.module("ngapp").controller("detailController", function(shared, menu, language, location, $state, $scope, $mdDialog){
+    alert("Testing Alert");
     this.title = $state.current.title;
     $scope.name = shared.info.auth;
     $scope.menu = menu;
@@ -10,19 +9,25 @@ angular.module("ngapp").controller("detailController", function(shared, menu, la
     $scope.pokemon = shared.currentPokemon;
 
     $scope.init = function() {
-        $scope.startNavigation = function() {
-            if($scope.pokemon.latitude != null) {
-                launchnavigator.navigate([shared.currentPokemon.latitude, shared.currentPokemon.longitude], {
-                    start: location.gps.latitude+","+location.gps.longitude
-                });
+        alert("Testing Alert");
+        alert("longitude : " + $scope.pokemon.name + " - " + $scope.pokemon.longitude + " latitude : " + $scope.pokemon.latitude );
+    }
 
-            } else {
-                errorGettingLocation();
-            }
+
+    $scope.startNavigation = function() {
+        if($scope.pokemon.latitude != null) {
+            launchnavigator.navigate([shared.currentPokemon.latitude, shared.currentPokemon.longitude], {
+                start: location.gps.latitude+","+location.gps.longitude
+            });
+
+        } else {
+            errorGettingLocation();
         }
     }
 
     var errorGettingLocation = function() {
+        alert("Testing Alert");
+
         $mdDialog.show(
             $mdDialog.alert()
                 .parent(angular.element(document.querySelector('#popupContainer')))
