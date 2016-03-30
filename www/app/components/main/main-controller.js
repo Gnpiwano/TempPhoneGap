@@ -16,7 +16,7 @@ angular.module("ngapp").controller("mainController", function(shared, menu, lang
 
     $scope.goDetail = function(pokemon) {
         shared.currentPokemon = pokemon;
-        location.replace("#/detail");
+        location.replace("#/map");
     }
 
     $scope.goMap = function() {
