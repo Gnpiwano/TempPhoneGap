@@ -3,12 +3,12 @@
 angular.module("ngapp").service("data", function($resource, shared, location){
 
     var url = 'http://pokeapi.co/api/v2/pokemon/';
-    var pokemonCount = 7;
+    var pokemonCount = 15;
     var ctrl = this;
     var count = 1;
 
     var getRandomNumber = function(number) {
-        var scale = 14;
+        var scale = 7;
         if(Math.random() < 0.5) {
             return number + (Math.random() / 7);
         } else {
