@@ -16,12 +16,7 @@
 
     <plugin name="com.logilite.vision.camera" spec="0.2.11" source="pgb" />
 
-    <plugin name="cordova-plugin-geolocation"/>
-    <plugin name="com.phonegap.plugins.OrientationLock" src="plugins/com.phonegap.plugins.OrientationLock"/>
-    <plugin name="cordova-plugin-device-motion"/>
-    <plugin name="cordova-plugin-globalization"/>
-    <plugin name="cordova-plugin-statusbar"/>
-    <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator"/>
+
 	
     <access origin="*" />
     <allow-intent href="http://*/*" />
