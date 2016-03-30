@@ -17,6 +17,7 @@
 
     <!--Plugins -->
     <gap:plugin name="org.apache.cordova.battery-status"/>
+    <gap:plugin name="org.apache.cordova.camera"/>
     <gap:plugin name="org.apache.cordova.media-capture"/>
     <gap:plugin name="org.apache.cordova.console"/>
     <gap:plugin name="org.apache.cordova.contacts"/>
@@ -50,8 +51,6 @@
 	
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1"/>
-    <plugin name="com.logilite.vision.camera" spec="0.2.11" source="pgb" />
-    <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
 
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
