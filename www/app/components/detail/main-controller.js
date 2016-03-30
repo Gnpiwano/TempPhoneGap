@@ -1,8 +1,7 @@
 "use strict";
 
-"use strict";
-
 angular.module("ngapp").controller("detailController", function(shared, menu, language, location, $state, $scope, $mdDialog){
+    alert("Testing Alert");
     this.title = $state.current.title;
     $scope.name = shared.info.auth;
     $scope.menu = menu;
@@ -27,6 +26,8 @@ angular.module("ngapp").controller("detailController", function(shared, menu, la
     }
 
     var errorGettingLocation = function() {
+        alert("Testing Alert");
+
         $mdDialog.show(
             $mdDialog.alert()
                 .parent(angular.element(document.querySelector('#popupContainer')))
