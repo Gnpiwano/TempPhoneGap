@@ -10,9 +10,6 @@
         "com.phonegap.plugins.OrientationLock": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "io.cordova.MaterialSeed"
-        },
         "cordova-plugin-device-motion": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         },
@@ -30,6 +27,9 @@
         },
         "uk.co.workingedge.phonegap.plugin.launchnavigator": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "nl.downsider.hybridmaterial1102"
         }
     },
     "dependent_plugins": {

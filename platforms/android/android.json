@@ -17,10 +17,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Accelerometer\"><param name=\"android-package\" value=\"org.apache.cordova.devicemotion.AccelListener\" /></feature>",
                             "count": 1
                         },
@@ -43,6 +39,10 @@
                         {
                             "xml": "<feature name=\"LaunchNavigator\"><param name=\"android-package\" value=\"uk.co.workingedge.phonegap.plugin.LaunchNavigator\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -51,15 +51,15 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 1
-                        },
-                        {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
                             "count": 1
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
                     ]
@@ -72,9 +72,6 @@
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         },
         "cordova-plugin-actionsheet": {
-            "PACKAGE_NAME": "io.cordova.MaterialSeed"
-        },
-        "cordova-plugin-camera": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
         },
         "cordova-plugin-device-motion": {
@@ -94,6 +91,9 @@
         },
         "uk.co.workingedge.phonegap.plugin.launchnavigator": {
             "PACKAGE_NAME": "io.cordova.MaterialSeed"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "nl.downsider.hybridmaterial1102"
         }
     },
     "dependent_plugins": {},
@@ -110,34 +110,6 @@
             "id": "cordova-plugin-actionsheet.ActionSheet",
             "clobbers": [
                 "window.plugins.actionsheet"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
-            "id": "cordova-plugin-camera.Camera",
-            "clobbers": [
-                "Camera"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
-            "id": "cordova-plugin-camera.CameraPopoverOptions",
-            "clobbers": [
-                "CameraPopoverOptions"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-camera/www/Camera.js",
-            "id": "cordova-plugin-camera.camera",
-            "clobbers": [
-                "navigator.camera"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
-            "id": "cordova-plugin-camera.CameraPopoverHandle",
-            "clobbers": [
-                "CameraPopoverHandle"
             ]
         },
         {
@@ -205,17 +177,45 @@
             "merges": [
                 "launchnavigator"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+            "id": "cordova-plugin-camera.Camera",
+            "clobbers": [
+                "Camera"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+            "id": "cordova-plugin-camera.CameraPopoverOptions",
+            "clobbers": [
+                "CameraPopoverOptions"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/www/Camera.js",
+            "id": "cordova-plugin-camera.camera",
+            "clobbers": [
+                "navigator.camera"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+            "id": "cordova-plugin-camera.CameraPopoverHandle",
+            "clobbers": [
+                "CameraPopoverHandle"
+            ]
         }
     ],
     "plugin_metadata": {
         "com.phonegap.plugins.OrientationLock": "0.1",
         "cordova-plugin-actionsheet": "2.2.2",
-        "cordova-plugin-camera": "2.1.1",
         "cordova-plugin-device-motion": "1.2.0",
         "cordova-plugin-geolocation": "2.1.0",
         "cordova-plugin-globalization": "1.0.3",
         "cordova-plugin-statusbar": "2.0.0-dev",
         "cordova-plugin-whitelist": "1.0.0",
-        "uk.co.workingedge.phonegap.plugin.launchnavigator": "3.0.1"
+        "uk.co.workingedge.phonegap.plugin.launchnavigator": "3.0.1",
+        "cordova-plugin-camera": "2.1.1"
     }
 }
