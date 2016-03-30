@@ -8,7 +8,7 @@ angular.module("ngapp").service("data", function($resource, shared, location){
     var count = 1;
 
     var getRandomNumber = function(number) {
-        var scale = 7;
+        var scale = 14;
         if(Math.random() < 0.5) {
             return number + (Math.random() / 7);
         } else {
