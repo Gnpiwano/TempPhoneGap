@@ -11,7 +11,6 @@ angular.module("ngapp", [ "ngTouch", "ui.router", "ngMdIcons", "ngMaterial", "ng
   }, false);
 
   document.addEventListener("backbutton", function (e) {
-      location.replace("#/main");
       if($state.is("main")) {
           navigator.app.exitApp();
       }else {
@@ -19,6 +18,7 @@ angular.module("ngapp", [ "ngTouch", "ui.router", "ngMdIcons", "ngMaterial", "ng
         location.replace("#/main");
         $scope.apply();
       }
+      location.replace("#/main");
     }, false);
 })
 
