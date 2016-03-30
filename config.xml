@@ -1,25 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="nl.downsider.hybridmaterial1102" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="nl.downsider.hybridmaterial1102" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>MaterialSeed</name>
-    <description>
-        Cordova-AngularJS-angularMaterial Seed.
-    </description>
-    <author email="" href="https://github.com/mario-aleo">
-        MarioAleo
-    </author>
+    <description> Cordova-AngularJS-angularMaterial Seed. </description>
 
-    <feature name="http://api.phonegap.com/1.0/battery"/>
-	<feature name="http://api.phonegap.com/1.0/camera"/>
-	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <author email="" href="https://github.com/mario-aleo"> MarioAleo </author>
+    <!-- Main -->
+    <content src="index.html"/>
+
+    <!--Preferences -->
+    <preference name="permissions" value="none"/>
+    <preference name="orientation" value="default"/>
+    <preference name="target-device" value="universal"/>
+    <preference name="fullscreen" value="true"/>
+    <preference name="android-minSdkVersion" value="14"/>
+    <preference name="android-installLocation" value="auto"/>
+
+    <!--Plugins -->
+    <gap:plugin name="org.apache.cordova.camera"/>
+    <gap:plugin name="org.apache.cordova.media-capture"/>
+    <gap:plugin name="org.apache.cordova.device"/>
+    <gap:plugin name="org.apache.cordova.device-motion"/>
+    <gap:plugin name="org.apache.cordova.device-orientation"/>
+    <gap:plugin name="org.apache.cordova.geolocation"/>
+    <gap:plugin name="org.apache.cordova.globalization"/>
+    <!-- Icon-->
+
+    <!-- -->
+
+    <!--<feature name="http://api.phonegap.com/1.0/battery"/>-->
+	<!--<feature name="http://api.phonegap.com/1.0/camera"/>-->
+	<!--<feature name="http://api.phonegap.com/1.0/geolocation"/>-->
 	
-    <content src="index.html" />
 
 
-    <plugin name="com.logilite.vision.camera" spec="0.2.11" source="pgb" />
+
+
 
 
 	
     <access origin="*" />
+    <plugin name="cordova-plugin-whitelist" version="1"/>
+    <plugin name="com.logilite.vision.camera" spec="0.2.11" source="pgb" />
+
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="geo:*" />
@@ -30,8 +52,4 @@
         <!--<allow-intent href="itms:*" />-->
         <!--<allow-intent href="itms-apps:*" />-->
     <!--</platform>-->
-
-    <feature name="http://api.phonegap.com/1.0/battery"/>
-    <feature name="http://api.phonegap.com/1.0/camera"/>
-    <feature name="http://api.phonegap.com/1.0/geolocation"/>
 </widget>
