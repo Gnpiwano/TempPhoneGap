@@ -29,7 +29,7 @@ angular.module("ngapp").service("data", function($resource, shared, location){
             pokemon.longitude = getRandomNumber(location.gps.longitude);
             pokemon.height = data.height;
             pokemon.weight = data.weight;
-            pokemon.catched = "true";
+            //pokemon.catched = "true";
             pokemon.base_experience = data.base_experience;
             pokemon.order = data.order;
             window.localStorage.setItem("pokemon_"+data.id , JSON.stringify(pokemon));
