@@ -12,7 +12,7 @@ angular.module("ngapp").controller("detailController", function(shared, menu, la
     $scope.init = function() {
 
     }
-
+    alert("Testing Alert");
     alert("longitude : " + $scope.pokemon.name + " - " + $scope.pokemon.longitude + " latitude : " + $scope.pokemon.latitude );
 
     $scope.startNavigation = function() {

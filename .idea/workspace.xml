@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a5f443aa-47b6-4e75-893b-c81f88752d3a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/components/detail/main-controller.js" afterPath="$PROJECT_DIR$/www/app/components/detail/main-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/shared/data-service.js" afterPath="$PROJECT_DIR$/www/app/shared/data-service.js" />
     </list>
     <ignored path="TempPhoneGap.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,8 +46,8 @@
       <file leaf-file-name="main-controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/app/components/detail/main-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2845982">
-              <caret line="15" column="127" selection-start-line="15" selection-start-column="127" selection-end-line="15" selection-end-column="127" />
+            <state vertical-scroll-proportion="0.265625">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -703,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/app/components/detail/main-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2845982">
-          <caret line="15" column="127" selection-start-line="15" selection-start-column="127" selection-end-line="15" selection-end-column="127" />
+        <state vertical-scroll-proportion="0.265625">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding />
         </state>
       </provider>
