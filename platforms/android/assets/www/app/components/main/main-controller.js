@@ -20,6 +20,6 @@ angular.module("ngapp").controller("mainController", function(shared, menu, lang
     }
 
     $scope.goMap = function() {
-        location.replace("#/map");
+        location.replace("#/detail");
     }
 });

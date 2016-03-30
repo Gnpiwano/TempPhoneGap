@@ -1,7 +1,6 @@
 "use strict";
 
 angular.module("ngapp").controller("detailController", function(shared, menu, language, location, $state, $scope, $mdDialog){
-    alert("Testing Alert");
     this.title = $state.current.title;
     $scope.name = shared.info.auth;
     $scope.menu = menu;
@@ -9,7 +8,6 @@ angular.module("ngapp").controller("detailController", function(shared, menu, la
     $scope.pokemon = shared.currentPokemon;
 
     $scope.init = function() {
-        alert("Testing Alert");
         alert("longitude : " + $scope.pokemon.name + " - " + $scope.pokemon.longitude + " latitude : " + $scope.pokemon.latitude );
     }
 
@@ -26,8 +24,6 @@ angular.module("ngapp").controller("detailController", function(shared, menu, la
     }
 
     var errorGettingLocation = function() {
-        alert("Testing Alert");
-
         $mdDialog.show(
             $mdDialog.alert()
                 .parent(angular.element(document.querySelector('#popupContainer')))
