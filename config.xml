@@ -12,10 +12,12 @@
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	
     <content src="index.html" />
-	
+
+
+    <plugin name="com.logilite.vision.camera" spec="0.2.11" source="pgb" />
+
     <plugin name="cordova-plugin-geolocation"/>
     <plugin name="com.phonegap.plugins.OrientationLock" src="plugins/com.phonegap.plugins.OrientationLock"/>
-    <plugin name="cordova-plugin-camera"/>
     <plugin name="cordova-plugin-device-motion"/>
     <plugin name="cordova-plugin-globalization"/>
     <plugin name="cordova-plugin-statusbar"/>
