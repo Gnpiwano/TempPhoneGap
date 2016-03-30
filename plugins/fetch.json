@@ -33,10 +33,34 @@
         "is_top_level": true,
         "variables": {}
     },
+    "cordova-plugin-globalization": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-globalization"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
     "cordova-plugin-geolocation": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-geolocation@~2.1.0"
+            "id": "cordova-plugin-geolocation"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device-motion": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device-motion"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+        "source": {
+            "type": "registry",
+            "id": "uk.co.workingedge.phonegap.plugin.launchnavigator"
         },
         "is_top_level": true,
         "variables": {}
@@ -49,10 +73,10 @@
         "is_top_level": false,
         "variables": {}
     },
-    "cordova-plugin-device-motion": {
+    "cordova-plugin-camera": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-device-motion@~1.2.0"
+            "id": "cordova-plugin-camera"
         },
         "is_top_level": true,
         "variables": {}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ngapp" style="height: 100%;">
+<html ng-app="ngapp">
 
   <head>
     <meta charset="utf-8"/>
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700">
 
+    <!-- lodash -->
     <script type="text/javascript" src="assets/lib/lodash.min.js"></script>
 
     <!-- AngularJs -->
@@ -31,7 +32,7 @@
     <script type="text/javascript" src="assets/lib/angular-material-icons.js"></script>
     <script type="text/javascript" src="assets/lib/angular-material.js"></script>
 
-    <!--Overig (Guus)-->
+    <!--google maps & resource provider-->
     <script src="assets/lib/angular-resource.js"></script>
     <script type="text/javascript" src="assets/lib/angular-simple-logger.min.js"></script>
     <script type="text/javascript" src="assets/lib/angular-google-maps.min.js"></script>
@@ -43,19 +44,27 @@
     <!-- Modules -->
     <script type="text/javascript" src="app/app.js"></script>
 
+    <script type="text/javascript" src="app/shared/language-service.js"></script>
+
     <!-- Routes -->
     <script type="text/javascript" src="app/routes.js"></script>
 
     <!-- Services -->
     <script type="text/javascript" src="app/shared/shared-service.js"></script>
+    <script type="text/javascript" src="app/shared/location-service.js"></script>
+
+    <script type="text/javascript" src="app/shared/menu-service.js"></script>
+    <script type="text/javascript" src="app/shared/data-service.js"></script>
+
 
     <!-- Controllers -->
-    <script type="text/javascript" src="app/components/main/main_controller.js"></script>
-    <script type="text/javascript" src="app/components/pokeDetail/main_controller.js"></script>
-    <script type="text/javascript" src="app/components/pokeMap/map_controller.js"></script>
-    <script type="text/javascript" src="app/components/loadingScreen/loading_controller.js"></script>
+    <script type="text/javascript" src="app/components/main/main-controller.js"></script>
+    <script type="text/javascript" src="app/components/detail/main-controller.js"></script>
+    <script type="text/javascript" src="app/components/map/main-controller.js"></script>
+    <script type="text/javascript" src="app/components/loading/main-controller.js"></script>
+    <script type="text/javascript" src="app/components/profile/main-controller.js"></script>
 
-    <title>NgApp</title>
+    <title>Pokedex</title>
   </head>
 
   <body style="position: fixed; height: 100%;" ng-cloak>

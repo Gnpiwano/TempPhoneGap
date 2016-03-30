@@ -14,9 +14,7 @@ body {
     padding:0px;
     width:100%;
 }
-.headDiv {
-    height: 100%;
-}
+
 .angular-google-map-container { height: 100vh; }
 
 .bottom_button {
@@ -27,15 +25,6 @@ body {
     width: 100%;
 }
 
-.center {
-    display: block;
-    margin: 0 auto;
-}
-
-.loading_gif {
-    display: block;
-    margin: 0 auto;
-}
 /* Portrait layout (default) */
 .app {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
